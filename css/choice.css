@@ -1,0 +1,133 @@
+
+*{
+	padding: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+}
+/*------------------- choice quis start -----------------*/
+.choice{
+	background: linear-gradient(rgba(210, 185, 231, 1), rgb(91, 42, 156));
+	/* background-repeat: no-repeat; */
+	padding: 100px 0px;
+	height: 100vh;
+}
+.title h2{
+	background-color: #937FB5;
+	color: white;
+	font-size: 40px;
+	width: 72%;
+	margin: 30px auto;
+	text-align: center;
+	padding: 15px;
+	border:  5px solid #03045E;
+	border-radius: 20px;
+	box-shadow: 9px 9px 1px 2px;
+}
+.fa,.fab ,.fas{
+    font-weight: 900;
+    width: 100px;
+    color: #03045E;
+    height: 80px;
+    font-size:80px;
+	margin-bottom: 15px;
+	/* margin: auto; */
+}
+.box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+	margin: auto;
+	width: 72%;
+}
+.card{
+	width: 33%;
+	padding: 20px 35px;
+	background: #937FB5;
+	border-radius: 20px;
+	margin: 15px;
+	text-align: center;
+	border:  5px solid #03045E;
+	box-shadow: 9px 9px 1px 2px white;
+}
+.card:hover {
+	background-color: tomato;
+	transform: translateY(-20px)
+  }
+.title h2:hover {
+	background-color: tomato;
+	transform: translateY(-20px)
+  }
+h5{
+	color: white;
+	font-size: 23px;
+	margin-bottom: 15px;
+}
+.linkToCourse p{
+	color: white;
+	font-size: 20px;
+	line-height: 27px;
+	margin-bottom: 25px;
+}
+.card .button{
+	background-color:#03045E;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 5px 18px;
+	border-radius: 30px;
+	transition: .4s; 
+}
+.card .button:hover{
+	background-color: white;
+	color: #000;
+	border: 2px solid #03045E;
+}
+.link{
+	color: black;
+	text-decoration: none;
+}
+.link:hover{
+	background-color: transparent;
+    background-color: #03045E;
+    border-radius: 5px;
+	color: white;
+	border: 2px solid #03045E;
+}
+/* @media (max-width:600px){
+	.choice{
+		height: 850px;
+	}
+}
+@media (min-width:750px){
+	.choice{
+		height: 1100px;
+	}
+}
+@media (min-width:1000px){
+	.choice{
+		height: 100%;
+	}
+} */
+@media(max-width:1200px){
+	.box{
+		flex-direction:column;
+	}
+	.choice{
+		height: 1750px;
+	}
+	.card{
+		margin-top: 50px;
+		width: 60%;
+	}
+.card *{
+	margin: 25px;
+}
+.fa,.fab ,.fas{
+	font-size: 150px;
+}
+
+}
+/* ------------------------choice quis end-------------------------*/
