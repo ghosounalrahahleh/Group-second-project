@@ -1,10 +1,19 @@
 let regexEmail = /^[a-z0-9._-]+@(gmail|yahoo).com$/;
 let passMobile = /^[0-9]{5,18}$/i;
-
-
+let userArray;
+let userCount;
+let  myUser;
 var users=[];
-    userCount = 0;
-    let  myUser;
+try{
+    userArray  = JSON.parse(localStorage.getItem("myUsers"));
+    users=userArray;
+    userCount=users.length;
+}catch(ex){
+ userArray=[];
+console.log(ex.massage);
+userCount = 0;
+}
+   
     
     class User{
         constructor(name,email,pass){
@@ -15,6 +24,7 @@ var users=[];
         static addUser(name,email,pass){
                myUser = new User(name,email,pass);
                users[userCount++] = myUser;
+               localStorage.setItem("myUsers",JSON.stringify(users));
         }
     
     }
@@ -85,29 +95,60 @@ password.addEventListener('keyup', () => {
 
 })
 
-subbtn.onclick = function (e) {
-    e.preventDefault();
+
+var boolPass=false;
+var boolEmail=false;
+var boolName=false;
+var boolValidate = true;
+function validateform(){
+    boolValidate = true;
     if (fullName.value == ""){
         nameMessage.style.color='rgb(199, 0, 0)';
         nameMessage.innerText='please Enter Your Full Name';
-        }else {nameMessage.innerText=""}
+        boolName=false;
+        }else {boolName=true;}
 
-    if (email.value == "") {
-        emailMessage.style.color='rgb(199, 0, 0)';
-        emailMessage.innerText='please Enter the email';
-    } 
+        if (email.value == "") {
+            emailMessage.style.color='rgb(199, 0, 0)';
+            emailMessage.innerText='please Enter the email';
+            boolEmail=false;
+        } else{boolEmail=true;}
+
+        
     if (password.value == ""){
         passMessage.style.color='rgb(199, 0, 0)';
         passMessage.innerText='Enter the password';
+        boolPass=false;
+    }else {boolPass=true;}
+    
+
+try{
+    console.log("email value == "+email.value)
+    for (const iterator of userArray) {
+        console.log("iterator "+iterator.email)
+        if((iterator.email+"") == email.value){
+            boolValidate=false;
+            break;
+        
+        }
+
     }
+}catch(ex){
+console.log(ex.massage);
+boolValidate=true;
+}
 
-    //----------localStorage -----------
-    
-    User.addUser(fullName.value,email.value,password.value);
-    console.log(users)
-    
-    localStorage.setItem("myUsers",JSON.stringify(users));
-    console.log(JSON.parse(localStorage.getItem("myUsers"))[0].name)
+   
+   if(boolPass && boolEmail && boolValidate && boolName){
+    User.addUser(fullName.value,email.value,password.value)
+   }else{
+       console.log(boolName,boolEmail,boolValidate,boolPass);
+   }
+  
+ 
+  
 
-} 
+    return (boolPass && boolEmail && boolValidate && boolName);
+
+}
 

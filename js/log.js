@@ -1,10 +1,14 @@
 let regexEmail = /^[a-z0-9._-]+@(gmail|yahoo).com$/;
 let passMobile = /^[0-9]{5,18}$/i;
+let userArray;
+try{
+     userArray = JSON.parse(localStorage.getItem("myUsers"));
+}catch(ex){
+ userArray=[];
+console.log(ex.massage);
+}
 
-let userArray = JSON.parse(localStorage.getItem("myUsers"));
 
-
-console.log('sfdfsd')
 // email
 const logEmail = document.getElementById('loginEmail');
 const logEmailMessage = document.getElementById('loginEmailMessage');
@@ -86,22 +90,7 @@ logPassword.addEventListener('keyup', () => {
 
 })
 
-logSubmit.onclick = function (e) {
-    // e.preventDefault();
-    // if (logEmail.value == "") {
-    //     e.preventDefault()
-    //     logEmailMessage.style.color='rgb(199, 0, 0)';
-    //     logEmailMessage.innerText='please Enter the email';
-    // } 
-    // if (logPassword.value == ""){
-    //     e.preventDefault()
-    //     logPassMessage.style.color='rgb(199, 0, 0)';
-    //     logPassMessage.innerText='Enter the password';
-    // }
 
-
-
-} 
 var boolPass=false;
 var boolEmail=false;
 var boolValidate = false;
@@ -113,7 +102,6 @@ function validateform(){
         boolEmail=false;
     } else{boolEmail=true}
     if (logPassword.value == ""){
-       
         logPassMessage.style.color='rgb(199, 0, 0)';
         logPassMessage.innerText='Enter the password';
         boolPass=false;
@@ -127,9 +115,6 @@ function validateform(){
         }
 
     }
-
-
-
     return (boolPass && boolEmail && boolValidate);
 
 }
