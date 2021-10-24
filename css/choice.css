@@ -7,27 +7,29 @@
 }
 /*------------------- choice quis start -----------------*/
 .choice{
-	background: linear-gradient(rgba(210, 185, 231, 1), rgb(91, 42, 156));
+	/* background: linear-gradient(rgb(154, 52, 238), rgb(91, 42, 156)); */
+	background-color: #6b34b3;
 	/* background-repeat: no-repeat; */
 	padding: 100px 0px;
 	height: 100vh;
 }
 .title h2{
-	background-color: #937FB5;
-	color: white;
+	background-color: rgb(221, 166, 238);
+	color: #353669;
 	font-size: 40px;
-	width: 72%;
+	width: 70%;
 	margin: 30px auto;
 	text-align: center;
-	padding: 15px;
-	border:  5px solid #03045E;
-	border-radius: 20px;
-	box-shadow: 9px 9px 1px 2px;
+	padding: 25px;
+	opacity: 0.9;
+	border-bottom: 4px solid white;
+	/* border-radius: 20px; */
+	box-shadow: -5px 9px 22px -4px rgba(0,0,0,0.75);
 }
 .fa,.fab ,.fas{
     font-weight: 900;
     width: 100px;
-    color: #03045E;
+    color: #6b34b3;
     height: 80px;
     font-size:80px;
 	margin-bottom: 15px;
@@ -44,34 +46,41 @@
 .card{
 	width: 33%;
 	padding: 20px 35px;
-	background: #937FB5;
-	border-radius: 20px;
+	background-color: rgb(255, 255, 255);
+	/* opacity: 0.8; */
+    color: black;
+	/* border-radius: 20px; */
+	border-bottom: 8px solid rgb(221, 166, 238) ;
 	margin: 15px;
 	text-align: center;
-	border:  5px solid #03045E;
-	box-shadow: 9px 9px 1px 2px white;
+	/* border:  5px solid #74198e; */
+	box-shadow: -5px 9px 22px -4px rgba(0,0,0,0.75);
+	height: 350px;
+	transform:  translatey(0);
+    transition: all .4s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .card:hover {
-	background-color: tomato;
-	transform: translateY(-20px)
+	/* border: 5px solid rgb(221, 166, 238); */
+	/* color: white; */
+	transform:  translatey(-20px);
   }
-.title h2:hover {
-	background-color: tomato;
-	transform: translateY(-20px)
-  }
+
 h5{
-	color: white;
 	font-size: 23px;
 	margin-bottom: 15px;
 }
 .linkToCourse p{
-	color: white;
+	color: black;
 	font-size: 20px;
 	line-height: 27px;
 	margin-bottom: 25px;
 }
 .card .button{
-	background-color:#03045E;
+	background-color: #6b34b3;
 	color: white;
 	text-decoration: none;
 	border: 2px solid transparent;
@@ -79,11 +88,15 @@ h5{
 	padding: 5px 18px;
 	border-radius: 30px;
 	transition: .4s; 
+	/* width: 70px;
+	margin-top: 20px; */
 }
 .card .button:hover{
 	background-color: white;
-	color: #000;
+	color: black;
 	border: 2px solid #03045E;
+	transition-duration: 0.5s;
+
 }
 .link{
 	color: black;
@@ -119,14 +132,17 @@ h5{
 		height: 1750px;
 	}
 	.card{
-		margin-top: 50px;
+		/* margin-top: 50px; */
 		width: 60%;
+		height: 450px;
 	}
-.card *{
+.card *:not(.link){
 	margin: 25px;
 }
 .fa,.fab ,.fas{
-	font-size: 150px;
+	font-size: 120px;
+	width: 170px;
+	
 }
 
 }
