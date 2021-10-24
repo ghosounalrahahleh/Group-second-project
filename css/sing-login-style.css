@@ -164,15 +164,12 @@ canvas{
     }
   }
 
-
-   /* login*/
-   @media (max-width: 408px) {
+  @media (max-width: 410px) {
     .loginContainer {
-      width:80% ;
-      height:600px ;
-    }
-    #loginContainer{
-        width: 80%;
+     height:  fit-content;
+     padding-bottom: 50px;
+     width:80% ;
     }
   }
+
 
