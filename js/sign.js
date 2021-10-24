@@ -123,9 +123,9 @@ function validateform(){
     
 
 try{
-    console.log("email value == "+email.value)
+    
     for (const iterator of userArray) {
-        console.log("iterator "+iterator.email)
+       
         if((iterator.email+"") == email.value){
             boolValidate=false;
             break;
@@ -138,9 +138,9 @@ console.log(ex.massage);
 boolValidate=true;
 }
 
-   
    if(boolPass && boolEmail && boolValidate && boolName){
     User.addUser(fullName.value,email.value,password.value)
+    sessionStorage.setItem('currentUser',[fullName.value,email.value]);
    }else{
        console.log(boolName,boolEmail,boolValidate,boolPass);
    }
