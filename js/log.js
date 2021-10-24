@@ -9,6 +9,7 @@ console.log(ex.massage);
 }
 
 
+
 // email
 const logEmail = document.getElementById('loginEmail');
 const logEmailMessage = document.getElementById('loginEmailMessage');
@@ -94,6 +95,8 @@ logPassword.addEventListener('keyup', () => {
 var boolPass=false;
 var boolEmail=false;
 var boolValidate = false;
+var currentUserName;
+var currentUserEmail;
 function validateform(){
     if (logEmail.value == "") {
        
@@ -109,11 +112,16 @@ function validateform(){
 
 
     for (const iterator of userArray) {
-
+        
         if(iterator.email == logEmail.value && iterator.pass == logPassword.value){
             boolValidate=true;
+            currentUserName=iterator.name;
+            currentUserEmail=iterator.email;
         }
 
+    }
+    if(boolPass && boolEmail && boolValidate){
+            sessionStorage.setItem('currentUser',[currentUserName,currentUserEmail]);
     }
     return (boolPass && boolEmail && boolValidate);
 
