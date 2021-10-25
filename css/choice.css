@@ -25,10 +25,9 @@
 	box-shadow: -5px 9px 22px -4px rgba(0,0,0,0.75);
 	overflow: hidden;
 }
-<<<<<<< HEAD
 .user-N{
 	color:white;
-=======
+}
 
 .title h2 .imgLable{
 	width: 50px;
@@ -46,7 +45,6 @@
     font-size:80px;
 	margin-bottom: 15px;
 	/* margin: auto; */
->>>>>>> 393fe53f3a586b91300fc511bff4a9356e629eec
 }
 /* end title */
 /* start card */
@@ -58,14 +56,7 @@
 	margin: auto;
 	width: 72%;
 }
-.fa,.fab ,.fas{
-    font-weight: 900;
-    width: 100px;
-    color: #6b34b3;
-    height: 80px;
-    font-size:80px;
-	margin-bottom: 15px;
-}
+
 .card{
 	width: 33%;
 	padding: 20px 35px;
@@ -106,10 +97,7 @@ h5{
 	padding: 10px 18px;
 	border-radius: 30px;
 	transition: .4s; 
-<<<<<<< HEAD
-=======
 	margin-bottom: -20px !important;
->>>>>>> 393fe53f3a586b91300fc511bff4a9356e629eec
 }
 .card .button:hover{
 	background-color: white;
@@ -142,9 +130,6 @@ h5{
 		width: 60%;
 		height: 450px;
 	}
-<<<<<<< HEAD
-    .card *:not(.link){
-=======
 	.title h2 .imgLable{
 	width: 50px;
     height: 100px;
@@ -153,7 +138,6 @@ h5{
     float: right;}
 
 .card *:not(.link){
->>>>>>> 393fe53f3a586b91300fc511bff4a9356e629eec
 	margin: 25px;
     }
     .fa,.fab ,.fas{
