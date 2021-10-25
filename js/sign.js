@@ -5,12 +5,12 @@ let userArray;
 var userCount=0;
 let myUser;
 let users;
-debugger;
+
 try{
     userArray  = JSON.parse(localStorage.getItem("myUsers"));
     users=userArray;
     userCount=users.length;
-    debugger
+  
 }catch(ex){
  userArray=[];
  userCount = 0;
@@ -23,7 +23,7 @@ class User{
             this.email=email;
     }
     static addUser(name,email,pass){
-    debugger;
+
            myUser = new User(name,email,pass);
            users[userCount++]=myUser;
            localStorage.setItem("myUsers",JSON.stringify(users));
@@ -103,13 +103,15 @@ var boolPass=false;
 var boolEmail=false;
 var boolName=false;
 var boolValidate = true;
+
 function validateform(){
     boolValidate = true;
-    if (fullName.value == ""){
+    if (! (fullName.value.includes(' ') && fullName.value.length >= 3)){
         nameMessage.style.color='rgb(199, 0, 0)';
         nameMessage.innerText='please Enter Your Full Name';
         boolName=false;
         }else {boolName=true;}
+
 
         if (email.value == "") {
             emailMessage.style.color='rgb(199, 0, 0)';

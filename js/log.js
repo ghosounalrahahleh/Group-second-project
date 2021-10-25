@@ -3,11 +3,11 @@ let passMobile = /^[0-9]{5,18}$/i;
 let userArray;
 try{
      userArray = JSON.parse(localStorage.getItem("myUsers"));
+     
 }catch(ex){
- userArray=[];
+ userArray=new Array();
 console.log(ex.massage);
 }
-
 
 
 // email
@@ -110,7 +110,8 @@ function validateform(){
         boolPass=false;
     }else {boolPass=true;}
 
-
+    if(userArray != 'null'){
+    
     for (const iterator of userArray) {
         
         if(iterator.email == logEmail.value && iterator.pass == logPassword.value){
@@ -120,6 +121,7 @@ function validateform(){
         }
 
     }
+}
     if(boolPass && boolEmail && boolValidate){
             sessionStorage.setItem('currentUser',[currentUserName,currentUserEmail]);
     }
