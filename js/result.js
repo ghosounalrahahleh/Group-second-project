@@ -1,4 +1,3 @@
-
 var viewAnswersBtn = document.querySelector(".viewAnswersBtn");
 var textResult = document.querySelector(".textResult");
 var resultQout = document.querySelector(".resultQout");
@@ -6,9 +5,13 @@ var resultTable = document.querySelector(".resultTable");
 var userGrade = document.querySelector(".result");
 var winnerImage = document.querySelector(".winnerImage");
 var loserImage = document.querySelector(".loserImage");
-localStorage.clear()
+
 winnerImage.style.display = "none";
 
+
+var correctAnswer = ["b", "d", "b", "d", "c"];
+localStorage.setItem("correctAnswer", JSON.stringify(correctAnswer));
+var retrievedObject = JSON.parse(localStorage.getItem("correctAnswer"));
 // to conver the correctAnswer from storge to array to the values for copersion
 var correctAnswerArray = JSON.parse(localStorage.getItem("correctAnswer"));
 
