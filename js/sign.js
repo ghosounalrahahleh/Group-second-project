@@ -22,7 +22,7 @@ class User{
             this.email=email;
     }
     static addUser(name,email,pass){
-        debugger;
+    
            myUser = new User(name,email,pass);
            users.push(myUser);
            userCount++;
@@ -130,7 +130,7 @@ try{
     for (const iterator of userArray) {
        
         if((iterator.email+"") == email.value){
-            debugger;
+            
             boolValidate=false;
             if(boolEmail){
             emailMessage.style.color='rgb(199, 0, 0)';
