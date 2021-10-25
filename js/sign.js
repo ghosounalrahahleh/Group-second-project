@@ -1,33 +1,36 @@
+
 let regexEmail = /^[a-z0-9._-]+@(gmail|yahoo).com$/;
 let passMobile = /^[0-9]{5,18}$/i;
 let userArray;
 let userCount;
-let  myUser;
-var users=[];
+let myUser;
+let users=[{'name':'Hassan','email':'hassan@gmail.com','pass':'123456'}];
+
 try{
     userArray  = JSON.parse(localStorage.getItem("myUsers"));
     users=userArray;
     userCount=users.length;
 }catch(ex){
  userArray=[];
-console.log(ex.massage);
-userCount = 0;
+ userCount = 0;
+
 }
-   
-    
-    class User{
-        constructor(name,email,pass){
-                this.name=name;
-                this.pass=pass;
-                this.email=email;
-        }
-        static addUser(name,email,pass){
-               myUser = new User(name,email,pass);
-               users[userCount++] = myUser;
-               localStorage.setItem("myUsers",JSON.stringify(users));
-        }
-    
+class User{
+    constructor(name,email,pass){
+            this.name=name;
+            this.pass=pass;
+            this.email=email;
     }
+    static addUser(name,email,pass){
+        debugger;
+           myUser = new User(name,email,pass);
+           users.push(myUser);
+           userCount++;
+           localStorage.setItem("myUsers",JSON.stringify(users));
+    }
+
+}
+
 
 // ----------------- sign Up -------------------
 
@@ -127,7 +130,13 @@ try{
     for (const iterator of userArray) {
        
         if((iterator.email+"") == email.value){
+            debugger;
             boolValidate=false;
+            if(boolEmail){
+            emailMessage.style.color='rgb(199, 0, 0)';
+            emailMessage.innerText='The email is already taken';
+            emailMessage.style.display='';
+            }
             break;
         
         }
@@ -145,8 +154,7 @@ boolValidate=true;
        console.log(boolName,boolEmail,boolValidate,boolPass);
    }
   
- 
-  
+
 
     return (boolPass && boolEmail && boolValidate && boolName);
 
