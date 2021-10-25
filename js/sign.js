@@ -2,18 +2,19 @@
 let regexEmail = /^[a-z0-9._-]+@(gmail|yahoo).com$/;
 let passMobile = /^[0-9]{5,18}$/i;
 let userArray;
-let userCount;
+var userCount=0;
 let myUser;
-let users=[{'name':'Hassan','email':'hassan@gmail.com','pass':'123456'}];
-
+let users;
+debugger;
 try{
     userArray  = JSON.parse(localStorage.getItem("myUsers"));
     users=userArray;
     userCount=users.length;
+    debugger
 }catch(ex){
  userArray=[];
  userCount = 0;
-
+users=new Array();
 }
 class User{
     constructor(name,email,pass){
@@ -22,10 +23,9 @@ class User{
             this.email=email;
     }
     static addUser(name,email,pass){
-    
+    debugger;
            myUser = new User(name,email,pass);
-           users.push(myUser);
-           userCount++;
+           users[userCount++]=myUser;
            localStorage.setItem("myUsers",JSON.stringify(users));
     }
 
