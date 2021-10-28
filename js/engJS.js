@@ -59,7 +59,7 @@ const generateQuestion = function (question) {
 
 // now we want to generate the fetch Function to fetch Question from JSON File 
 const fetchQuestion = function () {
-    fetch('js/engExam.json').then(res => res.json())
+    fetch('../js/engExam.json').then(res => res.json())
         .then(questions => {
             if (counter > 5) return
             const question = questions['question' + `${counter}`];
@@ -70,27 +70,10 @@ const fetchQuestion = function () {
 
 //this Function to compare the answers 
 const compareAnswers = function () {
-    let correctAnswers = 0;
-    let wrongAnswers = 0;
-    fetch('js/engExam.json').then(res => res.json())
-        .then(questions => {
-            let correctAnswers = 0;
-            let wrongAnswers = 0;
-            for (let i = 1; i < 6; i++) {
-                const userAnswer = sessionStorage.getItem(`question${i}`)
-                const correctAnswer = questions[`question${i}`].correct;
-                userAnswersArr.push(userAnswer);
-                correctAnswersArr.push(correctAnswer);
-                if (userAnswer === correctAnswer) correctAnswers++;
-                else wrongAnswers++;
-            }
-            console.log(correctAnswersArr);
-            console.log(userAnswersArr);
-            window.location.href = "result.html";
+   
+            window.location.href = "../pages/result.html";
             // here must put the link to second page 
-        })
-    console.log(correctAnswersArr);
-    console.log(userAnswersArr);
+       
 
 }
 fetchQuestion();
