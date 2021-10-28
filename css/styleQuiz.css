@@ -157,7 +157,14 @@ body{
     height: 50px;
     background-color: #6b34b3;
     color:#fff ;
+    cursor: pointer;
 }
+.next-btn:hover{
+    background-color: #4b257e;
+    transition-duration: 0.5s;
+    border-radius: 10px;
+}
+
 
  @media (max-width:376px){
      .quiz_box header .timer{
